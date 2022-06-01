@@ -19,7 +19,7 @@ public class Arrays : MonoBehaviour
             int target = 38;
             int[] data = CreateRandomArray(length);
             data[length - 1] = target;
-            await Benchmark.DoBenchmark(() => FindNumberInByteArray(data, target), times);
+            await Benchmark.DoBenchmark(() => FindNumberInArray(data, target), times);
         }
     }
 
@@ -33,7 +33,7 @@ public class Arrays : MonoBehaviour
         return data;
     }
 
-    private static void FindNumberInByteArray(int[] array, int target)
+    private static void FindNumberInArray(int[] array, int target)
     {
         for (int i = 0; i < array.Length; i++)
         {
