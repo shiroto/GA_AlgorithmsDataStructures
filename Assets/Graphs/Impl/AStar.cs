@@ -17,10 +17,10 @@ namespace Graphs
             open.Add(start);
             start.EstimatedCost = NodeHelper.EstimateDistance(start, goal);
 
-            while (open.Any())
-            {
-                // ...
-            }
+            //while (open.Any())
+            //{
+            //    // ...
+            //}
 
             // no path found
             return null;
