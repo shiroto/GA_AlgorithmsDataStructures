@@ -19,36 +19,7 @@ namespace Graphs
 
             while (open.Any())
             {
-                currentNode = GetLowestTotalCost(open);
-                closed.Add(currentNode);
-                open.Remove(currentNode);
-                if (currentNode.Equals(goal)) // found shortest path
-                {
-                    return GetPath(currentNode);
-                }
-                foreach (Node neighbor in currentNode.GetNeighbors())
-                {
-                    float newCost = currentNode.Cost + NodeHelper.EstimateDistance(neighbor, currentNode);
-                    if (open.Contains(neighbor) && neighbor.Cost <= newCost) // already have a shorter path
-                    {
-                        continue;
-                    }
-                    else if (closed.Contains(neighbor))
-                    {
-                        if (neighbor.Cost <= newCost)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            closed.Remove(neighbor);
-                        }
-                    }
-                    open.Add(neighbor);
-                    neighbor.EstimatedCost = NodeHelper.EstimateDistance(neighbor, goal);
-                    neighbor.Cost = newCost;
-                    neighbor.Predecessor = currentNode;
-                }
+                // ...
             }
 
             // no path found
